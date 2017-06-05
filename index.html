@@ -10,10 +10,64 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
+    <body onload="startTime()">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
+
+        <div id="txt"></div>
+
+        <form name="alarm">
+            <h1>Set Your alarm</h1>
+            <h2>Hour</h2>
+            <input type="number" min="0" max="23" maxlength="2" name="Hour">
+            <h2>Minute</h2>
+            <input type="number" min="0" max="59" maxlength="2" name="minute"><br>
+            <input type="button" onclick="getUserInput()" value="Set Up Alarm">
+            <input type="button" onclick="stopAl()" value="Stop sound">
+        </form>
+
+       <script>
+           var uHour=0,
+           umin=0,h,m,set=false;
+            var sound = new Audio("http://www.freespecialeffects.co.uk/soundfx/sirens/alarm_01.wav");
+		sound.loop = true;
+
+function stopAl(){
+    sound.pause();
+}
+function startTime() {
+    var today = new Date();
+     h = today.getHours();
+     m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    if(set){
+        if(m== uMinute && h ==uHour){
+            console.log('it is time');
+            sound.play();
+            set=false;
+        }
+    }
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+
+function getUserInput(){
+    uHour= alarm.Hour.value;
+    uMinute= alarm.minute.value;
+    console.log(uHour);
+    console.log(uMinute);
+    console.log(h);
+    console.log(m);
+    set=true;
+}
+</script> 
     </body>
 </html>
