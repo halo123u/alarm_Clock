@@ -9,12 +9,13 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="index.css" />
     </head>
     <body onload="startTime()">
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        <div id="frame">
         <div id="txt"></div>
 
         <form name="alarm">
@@ -26,6 +27,7 @@
             <input type="button" onclick="getUserInput()" value="Set Up Alarm">
             <input type="button" onclick="stopAl()" value="Stop sound">
         </form>
+        </div>
 
 <script src="index.js"></script> 
     </body>

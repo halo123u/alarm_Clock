@@ -1,11 +1,16 @@
+//Variables are declared global to be access withing function calls
 var uHour=0,
-           umin=0,h,m,set=false;
-            var sound = new Audio("http://www.freespecialeffects.co.uk/soundfx/sirens/alarm_01.wav");
-		sound.loop = true;
+umin=0,h,m,set=false;
+
+//load the sound
+var sound = new Audio("http://www.freespecialeffects.co.uk/soundfx/sirens/alarm_01.wav");
+sound.loop = true;
 
 function stopAl(){
      sound.pause();
 }
+
+
 function startTime() {
     var today = new Date();
      h = today.getHours();
@@ -16,6 +21,8 @@ function startTime() {
     document.getElementById('txt').innerHTML =
     h + ":" + m + ":" + s;
     if(set){
+
+
         if(m== uMinute && h ==uHour){
             console.log('it is time');
             sound.play();
@@ -32,9 +39,5 @@ function checkTime(i) {
 function getUserInput(){
     uHour= alarm.Hour.value;
     uMinute= alarm.minute.value;
-    console.log(uHour);
-    console.log(uMinute);
-    console.log(h);
-    console.log(m);
     set=true;
 }
