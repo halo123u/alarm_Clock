@@ -23,6 +23,43 @@ body{
 }
 
 #txt{
-    font-size: 200px;
+    font-size: 100px;
     border: 1px solid black;
+}
+
+/* 3D styling css */
+
+.container {
+    width: 500px;
+    height: 560px;
+    position: relative;
+    perspective: 800px;
+}
+
+#card{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform-origin: right center;
+
+}
+
+#card figure {
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+#card .back{
+    background: red;
+    transform:  rotateY(180deg);
+}
+
+#card.flipped{
+    transform: translateX( -100%) rotateY(-180deg);
 }

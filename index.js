@@ -1,6 +1,7 @@
 //Variables are declared global to be access withing function calls
 var uHour=0,
-umin=0,h,m,set=false;
+umin=0,h,m,set=false,
+card = document.getElementById('card');
 
 //load the sound
 var sound = new Audio("http://www.freespecialeffects.co.uk/soundfx/sirens/alarm_01.wav");
@@ -8,6 +9,7 @@ sound.loop = true;
 
 function stopAl(){
      sound.pause();
+     card.classList.toggle('flipped');
 }
 
 
@@ -26,6 +28,7 @@ function startTime() {
         if(m== uMinute && h ==uHour){
             console.log('it is time');
             sound.play();
+            card.classList.toggle('flipped');
             set=false;
         }
     }
@@ -41,3 +44,6 @@ function getUserInput(){
     uMinute= alarm.minute.value;
     set=true;
 }
+document.getElementById('flip').addEventListener( 'click', function(){
+    card.classList.toggle('flipped');
+  }, false);
