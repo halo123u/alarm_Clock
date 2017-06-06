@@ -44,6 +44,3 @@ function getUserInput(){
     uMinute= alarm.minute.value;
     set=true;
 }
-document.getElementById('flip').addEventListener( 'click', function(){
-    card.classList.toggle('flipped');
-  }, false);

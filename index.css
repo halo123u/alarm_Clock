@@ -1,8 +1,14 @@
 *{
     margin: 0;
+    font-family: 'Slabo 27px', serif;
 }
 h1{
-    
+    font-size: 55px;
+    color: white;
+}
+h2{
+    font-size: 35px;
+    color: whitesmoke
 }
 body{
     display: flex;
@@ -10,10 +16,48 @@ body{
     align-items: center;
     height: 100vh;
     width: 100%;
+    background: url('https://vignette3.wikia.nocookie.net/phobia/images/a/aa/Metal.jpg/revision/latest?cb=20161129031944');
 }
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 100%;
+}
+.Userin{
+    background: black;
+    color: white;
+    border: none;
+    outline: none;
+    height: 100px;
+    width: 70px;
+    font-size: 50px;
+}
+#ON{
+    height: 100px;
+    width: 100px;
+    background: deepskyblue;
+    border: 2px solid darkblue;
+    border-radius: 90%;
+}
+#ON:hover{
+    color: white;
+    background: lightseagreen;
+    border-radius: 90%;
+}
+#ON:active{
 
+    height: 145px;
+    width: 145px;
+ 
+    border-radius: 90%;
+    transition: .02s;
+
+}
 #frame{
-    background: blue;
+    background:none;
     height: 600px;
     width: 800px;
     display: flex;
@@ -22,9 +66,30 @@ body{
     flex-direction: column;
 }
 
+#OFF{
+    font-size: 40px;
+    border-radius: 50%;
+    height: 300px;
+    width:300px;
+    color: steelblue;
+    background: red;
+
+}
+
+#OFF:active {
+    color: white;
+    background: darkred;
+    width: 250px;
+    height: 250px;
+    transition: .001s;
+}
+
 #txt{
     font-size: 100px;
     border: 1px solid black;
+    color: darkred;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
 }
 
 /* 3D styling css */
@@ -56,7 +121,10 @@ body{
 }
 
 #card .back{
-    background: red;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform:  rotateY(180deg);
 }
 
